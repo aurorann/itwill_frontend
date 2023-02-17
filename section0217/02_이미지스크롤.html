@@ -25,6 +25,13 @@
         ctnt[6]="<img src='../../images/angel.png' width='85'>";
         ctnt[7]="<img src='../../images/angel.png' width='85'>";
 
+        //2) 1)에서 준비한 이미지를 id=mydiv에 배치하기
+        function start(){
+            document.write("<div style='postition:absolute; top:0; left:0;'>")
+            document.write(ctnt[0]);
+            document.write("</div>")
+        }//start() end
+
     </script>  
 </head>
 
@@ -34,7 +41,11 @@
     <input type="button" value="이미지 스크롤 중지">
 
     <!-- 이미지가 스크롤 되는 위치 -->
-    <div id="mydiv"></div>
+    <div id="mydiv">
+        <script>
+            start();
+        </script>
+    </div>
 
 
 </body>
