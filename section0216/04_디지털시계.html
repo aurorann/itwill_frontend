@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>04_디지털시계.html</title>
+  <style></style>
+</head>
+
+<body>
+
+    <h3>디지털 시계</h3>
+    <div id="clock"></div>
+    <hr>
+
+    <input type="button" value="시작" onclick="showtime()">
+    <input type="button" value="중지" onclick="killtime()">
+
+
+  <script>
+
+    // showtime();// HTML문서가 시작되었을때 showtime()함수 호출
+    
+    function showtime(){
+        const d=new Date();
+
+        let today="";
+        //년도
+        today += d.getFullYear() + ".";
+
+        //월
+        if(d.getMonth()+1<10){
+            today+="0";
+        }//if end    
+        today += d.getMonth() + 1 + ".";
+
+        //일
+        if(d.getDate()<10){
+            today+="0";
+        }//if end    
+        today += d.getDate();
+
+        //요일값 구하기
+        switch(d.getDay()){
+        case 0: today+="(일)"; break;
+        case 1: today+="(월)"; break;
+        case 2: today+="(화)"; break;
+        case 3: today+="(수)"; break;
+        case 4: today+="(목)"; break;
+        case 5: today+="(금)"; break;
+        case 6: today+="(토)"; break;
+        }//switch end
+
+        //AM PM 구분
+        if(d.getHours()<12){
+            today+=" AM ";
+        }else{
+            today+=" PM ";
+        }//if end  
+        
+        //시간 12시이상 구분
+        if(d.getHours()<13){
+            today+=d.getHours() + " : ";
+        }else{
+            today+=(d.getHours()-12) + " : ";
+        }//if end     
+
+
+        //분 
+        if(d.getMinutes()<10){
+        today+="0";
+        }//if end    
+        today += d.getMinutes() + " : ";
+
+        //초
+        if(d.getSeconds()<10){
+        today+="0";
+        }//if end    
+        today += d.getSeconds();
+
+        document.getElementById("clock").innerText = today;
+
+        //1초후에 showtime함수를 호출
+        timer = setTimeout(showtime, 1000);
+        
+    }//showtime end
+
+    let timer; // 전역변수
+
+    function killtime(){
+        clearTimeout(timer);//시간해제
+    } //killtime end
+
+
+
+
+
+
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>02_내장객체.html</title>
+  <style></style>
+</head>
+
+<body>
+
+  <h3>자바 스크립트의 다양한 내장객체</h3>
+
+  <script>
+    //참조 https://www.w3schools.com/js/js_objects.asp
+    //참조 https://www.w3schools.com/jsref/default.asp
+    /*
+        ● 객체(Object)
+          - Object = 멤버변수 + 멤버함수로 구성
+          - 멤버변수, Property, Attribute, field, column
+          - 멤버함수, method, function
+          - 객체명.멤버변수
+          - 객체명.멤버함수()   
+    */
+
+    //1) Math 객체
+    // document.write(Math.Pi);
+    // document.write(Math.abs(-3));
+
+    //2) Number 객체
+    // document.write(Number("5"));//"5" -> 5
+    // document.write(Number("8.9"));//"8.9" -> 8.9
+
+
+    //3) Date
+    // const d=new Date();
+    ////////////////////////////////////////////////////////////
+
+
+    //4) window 객체
+    //참조 https://www.w3schools.com/jsref/obj_window.asp
+    //->브라우저와 관련한 다양한 기능을 제공한다
+    //->객체명을 생략할 수 있다
+    
+    //  1) alert() 경고창(확인버튼 1개)
+    // window.alert();
+    // alert();//위의 태그와 동일. window라는 객체명 생략
+    // alert(123); 경고창에 문자 출력
+    // alert("KOREA");
+    // alert('SEOUL');
+    // alert("\"");
+    // alert('\'');
+    // alert("'");
+    // alert('"');
+    // alert("\\");
+    // alert("서울\n제주\n\n부산"); // \n 줄바꿈태그
+
+
+    //  2) confirm() 경고창 ('확인, 취소' 버튼 2개)
+    //      - boolean(true, false)값으로 반환
+    // window.confirm();
+    // confirm();//위의 태그와 동일. window라는 객체명 생략
+
+    // let flag=confirm("영구히 삭제됩니다.\n지울까요?");
+    // if(flag){
+    //     alert(flag);
+    //     alert("휴지통 비우기 성공")
+    // }else{
+    //     alert(flag);
+    //     alert("휴지통 비우기 실패")
+    // }//if end
+
+
+    //  3) 새창 띄우기
+    // window.open();
+
+
+    //  4) 인쇄창 띄우기
+    // window.print();
+
+
+    //  5) setInterval() 과 setTimeout()
+    /*
+        - 주어진 시간에 따라 자동으로 함수 호출
+        - 시간 : 1 second = 1000 milliseconds
+        - new version
+            setInterval(함수명, 시간) : 주기적으로 함수 호출
+            setTimeout(함수명, 시간)  : 한번만 호출
+
+        - old version
+            setInterval("함수명()", 시간)
+            setTimeout("함수명()", 시간)
+
+        - 시간해제 : clearInterval(), clearTimeout()    
+    */ 
+
+    function hello(){
+        alert("안녕하세요");
+    }//hello end
+
+    // setInterval(hello, 3000); // 3초마다 주기적으로 hello함수 호출
+    // setTimeout(hello, 3000);  // 3초후에 hello함수 단 1번만 호출
+    /*
+        재귀적 함수 호출 관계를 이용해서 3초마다 주기적으로 hello함수 호출
+        function hello(){
+            setTimeout(hello, 3000);
+        }//hello end
+    
+    */
+
+
+    //  6) screen 객체
+    //-> 사용자 device의 해상도 확인
+    // alert(screen.width);
+    // alert(screen.height);
+
+
+    //  7) location 객체
+    // location.reload();  //현재페이지 새로고침
+
+    //페이지 이동시 많이 사용함
+    //-> location.href="URL 또는 페이지명"
+    //-> location="URL 또는 페이지명"
+    // location.href="https://www.itwill.co.kr/";
+
+
+    //  8) history 객체
+    //-> 뒤로, 앞으로
+    history.back();
+    history.forward();
+    history.go(-2);     //뒤로 뒤로
+
+
+
+  </script>
+
+</body>
+</html>

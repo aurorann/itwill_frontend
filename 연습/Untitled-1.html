@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>blank.html</title>
+  <style></style>
+</head>
+
+<body>
+
+  <script>
+    let drink = prompt ( "가격 조회를 원하는 음료수를 입력하세요.( 콜라, 사이다, 커피 中 택1)", "" );
+
+switch (drink){
+    case "콜라" :
+      document.write ( "800원" );
+      break;
+
+    case "사이다" :
+      document.write ( "900원");
+      break;
+
+    case "커피" :
+      document.write ( "700원" );
+      break;
+
+    default :
+      document.write ("잘못된 단어 입력");
+}
+  </script>
+
+</body>
+</html>

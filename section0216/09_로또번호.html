@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>09_로또번호.html</title>
+  <style></style>
+</head>
+
+<body>
+
+    <h3>로또번호</h3>
+
+    <input type="button" value="로또번호발생" onclick="lotto()">
+    <div id="demo"></div>
+
+    <script>
+        function lotto(){
+            //문) 로또번호 1~45사이의 수를 서로 겹치지 않게 6개 발생시킨후,
+            //    오름차순으로 정렬해서 id=demo에 출력하시오
+
+            let lotto=[]; //로또번호 저장
+
+            for(let i=0; i<6; i++){
+                let num = Math.floor(Math.random()*44)+1;
+
+                for(j in lotto){
+                    while(num == lotto[j]){
+                        num = Math.floor(Math.random()*44)+1;
+                    }
+                }
+                lotto.push(num);
+            }
+            lotto.sort(function(a, b){return a - b});
+
+            document.getElementById("demo").innerHTML = lotto;
+
+        }//lotto() enddddddd
+
+
+
+        
+    </script>
+
+</body>
+</html>

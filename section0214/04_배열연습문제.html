@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>04_배열연습문제.html</title>
+  <style></style>
+</head>
+
+<body>
+
+    <h3>배열 연습 문제</h3>
+
+  <script>
+
+    let num=[7, 8, -5, 9, 6];
+    let size=num.length; //5
+
+    document.write(num);
+    document.write("<hr>");
+    document.write("<hr>");
+
+
+    //문1)배열 요소의 전체 합을 구하시오 17
+    //1) 배열 각각 활용
+    // document.write(num[0]+num[1]+num[2]+num[3]+num[4])
+
+    //2) for문 활용
+    // let sum=0;
+    // for(let i=0; i<size; i++){
+    //     sum = sum + num[i];
+    // }//for end
+    // document.write(sum);
+
+    //3) 덩어리 활용
+    let hap=0;
+    for( i in num ){
+        hap=hap+num[i];
+    }
+    document.write(hap);
+    
+
+    ///////////////////////////////////////////////////
+    document.write("<hr>");
+
+
+    //문2)음수의 갯수를 구하시오 1
+    let count = 0;
+    for(let i=0; i<num.length; i++){
+        if(num[i]<0){
+            count++
+        }
+    }
+    document.write(count);
+    document.write("<hr>");
+
+
+    //문3)최대값, 최소값을 각각 구하시오 8, -9
+
+    //1)내림차순 정렬 후 최대값, 최소값 구하기
+    // num.sort(function(a,b){return b - a}); // 8,7,6,5,-9
+    // document.write("최대값 : "+num[0]);         //최대값
+    // document.write("<br>");
+    // document.write("최소값 : "+num[size-1]);    //최소값
+    // document.write("<hr>");
+
+    //2)
+    document.write(Math.max(...num));//(...)은 배열 요소를 가르키는 태그
+    document.write("<br>");
+    document.write(Math.min(...num));
+    document.write("<br>");
+    document.write("<hr>");
+
+
+    //3)   
+    let max=num[0];//최대값
+    let min=num[0];//최소값
+    for(let i=0; i<size; i=i+1){
+        if(max<num[i]){
+            max=num[i];
+        }//if end
+
+        if(min>num[i]){
+            min=num[i];
+        }//if end
+    }//for end
+
+    document.write("최대값 : "+max);
+    document.write("<br>");
+    document.write("최소값 : "+min);
+    document.write("<br>");
+
+    /*
+
+    
+    
+    
+    
+    
+    */    
+
+    // let min = Math.min.apply(null, num);
+    // let max = Math.max.apply(null, num);
+
+
+    // let min=0;
+    // let max=0;
+
+    // for (let i = 0; i < num.length; i++) {
+    // if (min > num[i]) {
+    //   min = num[i];
+    // }
+    //     }
+    //     return min;
+
+
+    // for (let i = 0; i < num.length; i++) {
+    // if (max < num[i]) {
+    //   max = num[i];
+    // }
+    //     }
+    //     return max;
+
+
+
+
+    // document.write("최소값 : "+min+"<br>");
+    // document.write("최대값 : "+max+"<br>");
+
+    document.write("<hr>");
+
+
+    //문4)num[4]요소의 등수를 구하시오 3
+        let r=1;
+        for(let i=0; i<size; i++){
+            if(num[4]<num[i]){
+                r=r+1;
+            }
+        }
+
+        document.write("num[4]요소의 등수 : "+r+"등")
+        document.write("<hr>");
+
+
+    /*
+        6<7    if(num[4]<num[0]) r=1+1
+        6<8    if(num[4]<num[1]) r=2+1
+        6<-5   if(num[4]<num[2]) 
+        6<9    if(num[4]<num[3]) r=3+1
+        6<6    if(num[4]<num[4]) 
+    */
+
+
+    // num.sort(function(a, b){return a - b});  
+    // document.write(num[4])
+    
+    document.write("<hr>");
+    
+    //과제) num배열 요소의 각각의 등수 모두 구하기
+    /*
+      7<7   if(num[0]<num[0])
+      7<8   if(num[0]<num[1])   rank[0]=rank[0]+1
+      7<-5  if(num[0]<num[2])
+      7<9   if(num[0]<num[3])   rank[0]=rank[0]+1
+      7<6   if(num[0]<num[4])
+
+      8<7   
+      8<8   
+      8<-5
+      8<9   rank[1]=rank[1]+1
+      8<6
+
+      -5<7  rank[2]=rank[2]+1
+      -5<8  rank[2]=rank[2]+1
+      -5<-5
+      -5<9  rank[2]=rank[2]+1
+      -5<6  rank[2]=rank[2]+1
+    */
+
+    document.write(num); //7,8,-5,9,6
+    document.write("<hr>");
+
+    let rank=[1,1,1,1,1];
+    
+    for(let a=0; a<size; a++){
+        for(let b=0; b<size; b++){
+            if(num[a]<num[b]){
+                rank[a]=rank[a]+1
+            }
+        }//for end
+    }//for end
+
+    document.write("num배열요소의 각 등수 : "+rank);
+    ///////////////////////////////////////////////////
+    document.write("<hr>");
+
+
+    
+    
+
+
+    
+  </script>
+
+</body>
+</html>
