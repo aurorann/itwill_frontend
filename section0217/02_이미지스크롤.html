@@ -45,15 +45,28 @@
                 document.write("</div>");
             }//for end
 
-            //3) 3초 후에 scroll함수 1번 호출
+        //3) 3초 후에 scroll함수 1번 호출
             setTimeout(scroll, 3000);
         }//start() end
 
         function scroll(){
             // alert();
-            alert(document.getElementById("area0").style.left);
-        }//scroll() end
+            // alert(document.getElementById("area0").style.left);
+        
+            //4) id=area0의 스타일을 가져와서 왼쪽 여백값을 -10px만큼 줄이기
+            // let tmp=document.getElementById("area0").style;
+            // tmp.left=parseInt(tmp.left)-10+"px";
 
+            //문) 이미지 8장을 동시에 왼쪽여백 조정하기
+            for(let i=0; i<ctnt.length; i++){
+            let tmp=document.getElementById("area"+i).style;
+            tmp.left=parseInt(tmp.left)-10+"px";
+            }//for end
+
+            //6) 0.5초후에 scroll함수 호출
+            setTimeout(scroll, 500);
+
+        }//scroll() end
     </script>  
 </head>
 
