@@ -27,10 +27,32 @@
 
         //2) 1)에서 준비한 이미지를 id=mydiv에 배치하기
         function start(){
-            document.write("<div style='postition:absolute; top:0; left:0;'>")
+            /*
+            document.write("<div id='area0' style='position:absolute; top:0; left:0;'>");
             document.write(ctnt[0]);
-            document.write("</div>")
+            document.write("</div>");
+
+            document.write("<div id='area1' style='position:absolute; top:0; left:90px;'>");
+            document.write(ctnt[1]);
+            document.write("</div>");
+            */
+
+            //문) 반복문을 활용해서 이미지 8장 배치하기
+
+            for(let i=0; i<ctnt.length; i++){//반복변수를 넣을때는 맺고 끊고를 잘해야한다.
+                document.write("<div id='area"+i+"' style='position:absolute; top:0; left:"+(i*90)+"px;'>");
+                document.write(ctnt[i]);
+                document.write("</div>");
+            }//for end
+
+            //3) 3초 후에 scroll함수 1번 호출
+            setTimeout(scroll, 3000);
         }//start() end
+
+        function scroll(){
+            // alert();
+            alert(document.getElementById("area0").style.left);
+        }//scroll() end
 
     </script>  
 </head>

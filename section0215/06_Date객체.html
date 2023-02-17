@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>06_Date객체.html</title>
+  <style></style>
+</head>
+
+<body>
+
+  <h3>Date객체</h3>
+  현재날짜 <div id="clock"></div>
+
+  <script>
+
+    //참조 https://www.w3schools.com/js/js_dates.asp
+    //Date 날짜 관련 내장 객체
+    //const d=3;//const는 변수값을 바꿀수없다
+
+
+    const d=new Date();//시스템의 현재 날짜 정보 가져오기(년월일시분초)
+    /*
+    document.write(d.getFullYear());
+    document.write("<br>");
+    document.write(d.getMonth());//2월이면 1 반환
+    document.write("<br>");
+    document.write(d.getMonth()+1);
+    document.write("<br>");
+    document.write(d.getDate());
+    document.write("<hr>");
+
+    document.write(d.getHours());
+    document.write("<br>");
+    document.write(d.getMinutes());
+    document.write("<br>");
+    document.write(d.getSeconds());
+    document.write("<hr>");
+
+    document.write(d.getDay());//요일
+    document.write("<br>");
+
+    const days=["일","월", "화", "수", "목", "금", "토"];
+    document.write(days[d.getDay()]);
+    document.write("<hr>")
+    */
+
+
+    //문제) 날짜변수 d값을 이용해서 날짜 정보를 아래와 같이 구성해서 id=clock에 출력하시오
+    //      2023. 02. 15 (수)  PM 5:09:42
+
+    let today="";
+    today += d.getFullYear() + ".";
+
+    if(d.getMonth()+1<10){
+        today+="0";
+    }//if end    
+    today += d.getMonth() + 1 + ".";
+
+    if(d.getDate()<10){
+        today+="0";
+    }//if end    
+    today += d.getDate();
+
+    //요일값 구하기
+    //1)
+    switch(d.getDay()){
+    case 0: today+="(일)"; break;
+    case 1: today+="(월)"; break;
+    case 2: today+="(화)"; break;
+    case 3: today+="(수)"; break;
+    case 4: today+="(목)"; break;
+    case 5: today+="(금)"; break;
+    case 6: today+="(토)"; break;
+    }//switch end
+
+    //2)
+    // const days=["일","월", "화", "수", "목", "금", "토"];
+    // today += "(" + days[d.getDay()] + ")";
+
+    if(d.getHours()<12){
+        today+=" AM ";
+    }else{
+        today+=" PM ";
+    }//if end  
+    
+    
+    if(d.getHours()<13){
+        today+=d.getHours() + " : ";
+    }else{
+        today+=(d.getHours()-1) + " : ";
+    }//if end     
+
+
+
+    if(d.getMinutes()<10){
+    today+="0";
+    }//if end    
+    today += d.getMinutes() + " : ";
+
+    if(d.getSeconds()<10){
+    today+="0";
+    }//if end    
+    today += d.getSeconds();
+
+
+
+
+
+
+    document.getElementById("clock").innerText = today;
+    
+  </script>
+
+</body>
+</html>
