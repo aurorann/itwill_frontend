@@ -8,9 +8,19 @@
             position: relative;
             left: 100px;
             top: 10px;
-            width: 800px;
+
+            /*8)*/
+            --width: 800px;
+
+            width: 280px; /*9)가로 영역크기 줄이기*/
             height: 100px;
-            background-color: hotpink;
+
+            /*10)*/
+            --background-color: hotpink;
+
+            background-color: white;/*11) 배경색 흰색응로 바꾸기*/
+
+            overflow: hidden;
         }
     </style>
     <script>
@@ -61,19 +71,33 @@
             for(let i=0; i<ctnt.length; i++){
             let tmp=document.getElementById("area"+i).style;
             tmp.left=parseInt(tmp.left)-10+"px";
+
+            //7) 이미지를 순환하기 위해서 이미지를 다시 배치
+            if(parseInt(tmp.left)<=-90){                
+                tmp.left=(ctnt.length-1) * 90 + "px";
+                // tmp.left=parseInt(tmp.left)+720+"px";
+            }
+
+
             }//for end
 
             //6) 0.5초후에 scroll함수 호출
-            setTimeout(scroll, 500);
+            timer=setTimeout(scroll, 500);
 
         }//scroll() end
+
+        var timer; //전역변수 선언
+
+        function killtime(){
+            clearTimeout(timer);
+        }//killtime() end
     </script>  
 </head>
 
-<body>
+<body onunload="killtime()"> <!-- 14) 현재문서에서 나갔거나 종료했을 때 -->
 
     <h3>이미지스크롤</h3>
-    <input type="button" value="이미지 스크롤 중지">
+    <input type="button" value="이미지 스크롤 중지" onclick="killtime()">
 
     <!-- 이미지가 스크롤 되는 위치 -->
     <div id="mydiv">
