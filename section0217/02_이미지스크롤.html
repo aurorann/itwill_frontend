@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>02_이미지스크롤.html</title>
+    <style>
+        #mydiv{
+            position: relative;
+            left: 100px;
+            top: 10px;
+            width: 800px;
+            height: 100px;
+            background-color: hotpink;
+        }
+    </style>
+    <script>
+        //1)스크롤하고자 하는 이미지를 전역변수에 저장
+        let ctnt=[];
+        ctnt[0]="<img src='../../images/angel.png' width='85'>";
+        ctnt[1]="<img src='../../images/devil.png' width='85'>";
+        ctnt[2]="<img src='../../images/smile.png' width='85'>";
+        ctnt[3]="<img src='../../images/angel.png' width='85'>";
+        ctnt[4]="<img src='../../images/devil.png' width='85'>";
+        ctnt[5]="<img src='../../images/smile.png' width='85'>";
+        ctnt[6]="<img src='../../images/angel.png' width='85'>";
+        ctnt[7]="<img src='../../images/angel.png' width='85'>";
+
+    </script>  
+</head>
+
+<body>
+
+    <h3>이미지스크롤</h3>
+    <input type="button" value="이미지 스크롤 중지">
+
+    <!-- 이미지가 스크롤 되는 위치 -->
+    <div id="mydiv"></div>
+
+
+</body>
+</html>
