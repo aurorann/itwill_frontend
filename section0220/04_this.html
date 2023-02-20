@@ -10,7 +10,7 @@
 
     <h3>this</h3>
 
-    <form name="myform" id="myform">
+    <form name="myform" id="myform" onsubmit="return test6(this)">
         <input type="button" name="btn1" id="btn1" value="버튼1" onclick="test1()">
 
         <hr>
@@ -22,12 +22,20 @@
         <input type="button" name="btn3" id="btn3" value="버튼3" onclick="test3(this)">
 
         <hr>
-        <!-- this.value 자신의 요소가 가지고 있느 실제값(value="") -->
+        <!-- this.value 자신의 요소가 가지고 있는 실제값(value="") -->
         <input type="button" name="btn4" id="btn4" value="버튼4" onclick="test4(this.value)">
 
         <hr>
         <!-- this.form 자신의 요소가 속해 있는 폼. 여기서는 <form name=myform>을 가리킴 -->
         <input type="button" name="btn5" id="btn5" value="버튼5" onclick="test5(this.form)">
+
+        <hr>
+        <!-- onsubmit이벤트는 리턴값이 true이면 전송된다 -->
+        <input type="submit" value="전송">
+
+        <hr>
+        <!-- this키워드는 폼컨트롤요소에서 사용 -->
+        <a href="#" onclick="test7(this)">아이티윌</a>
     </form>
 
   <script>
@@ -71,6 +79,13 @@
         alert(f.btn5.value);
     }//test3() end
 
+    function test6(f){
+        alert(f);
+    }//test6() end
+
+    function test7(obj){
+        alert(obj);
+    }//test7() end
   </script>
 
 </body>
