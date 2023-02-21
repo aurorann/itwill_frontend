@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>03_kakaomap.html</title>
+  <style></style>
+</head>
+
+<body>
+    <!-- 주위) 구글맵 위도, 경도가 표시 되지 않을 경우-->
+    <!--       구글지도 좌표 지역 설정 다른나라로 설정하면 좌표 바로 뜹니다.  
+               지역 설정은 지도 우하단에 작은 글씨 대한민국을 클릭하면 바꿀 수 있습니다. -->
+
+    <!--
+        ● appkey 받는 방법
+          https://developers.kakao.com/ 로그인
+          지도 -> 제품소개 -> 시작하기 -> 애플리케이션 추가하기 -> JavaScript 키 복사
+
+        ● 플랫폼 설정하기
+          내 애플리케이션 -> APP 선택 -> 플랫폼 -> 플랫폼 설정하기 -> Web 플랫폼 등록 -> http://127.0.0.1:5500
+    -->
+
+    <!-- 카카오 지도 시작하기 -->
+    <!-- 강남 삼원타워 지도 띄우기 -->
+
+    <div id="map" style="width:500px;height:400px;"></div>
+    <div id="map" style="width:100%;height:350px;"></div>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c017f60857f82f1618b7f25fd6a779ac"></script>
+    <script>
+        var container = document.getElementById('map');
+        var options = {
+            center: new kakao.maps.LatLng(37.4988, 127.0317), //지도의 중심좌표
+            level: 2 //지도의 확대 레벨
+        };
+
+        //지도를 표시할 div와 지도 옵션으로 지도를 생성합니다
+        var map = new kakao.maps.Map(container, options);
+
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = { 
+        center: new kakao.maps.LatLng(37.4988, 127.0317), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };
+
+    var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+    // 마커가 표시될 위치입니다 
+    var markerPosition  = new kakao.maps.LatLng(37.4988, 127.0317); 
+
+    // 마커를 생성합니다
+    var marker = new kakao.maps.Marker({
+        position: markerPosition
+    });
+
+    // 마커가 지도 위에 표시되도록 설정합니다
+    marker.setMap(map);
+
+    // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+    // marker.setMap(null);    
+    </script>
+
+</body>
+</html>
