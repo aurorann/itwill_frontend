@@ -7,9 +7,50 @@
 </head>
 
 <body>
+  <!--
+      참조 https://www.w3schools.com/jquery/default.asp
+
+        ● [자바스크립트기반 오픈소스 (.js)]
+          - jQuery, Bootstrap, moment, AJAX, AngularJS, react, vue ~~
+          - 시각화 : chart.js, d3.js 등등
+        
+        ● [jQuery] - JavaScript Library
+
+        ● [jQuery 오픈소스 사용방법]
+            1) jQuery라이브러리를 제공하는 해당사이트 직접 링크
+            <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+            </head>
+
+            2) jQuery라이브러리를 직접 다운 받아서 사용(추천)
+                https://jquery.com/download/
+                -> Download the compressed, production jQuery 3.6.4
+                -> 우클릭 -> 다른이름으로 링크 저장
+                -> jquery-3.6.4.min.js //min으로 압축된 파일 사용 추천!
+  -->
+
+  <!-- jQuery import -->
+  <script src="jquery-3.6.4.min.js"></script>
 
   <script>
-    
+    //jQuery 시작
+
+    //1) jQuery() 축약형 -> $
+    //alert($);
+
+    //2)
+    /*
+    $(document).ready(function(){
+      alert("jQuery시작");
+      alert($);
+    });
+    */
+
+    //3)
+    $(function(){
+      alert("jQuery시작");
+      alert($);
+    });
   </script>
 
 </body>

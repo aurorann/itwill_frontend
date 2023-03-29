@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>02_jquery이벤트.html</title>
+    <style></style>
+    <!-- jQuery import -->
+    <script src="jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+
+    <h3>jQuery 이벤트</h3>
+    <form id="memfrm" name="memfrm" action="ok.jsp">
+        아이디 : <input type="text" id="uid" name="uid" value="ITWILL">
+    </form>
+
+    <script>
+        
+        //<input type="text" id="uid" name="uid" value="ITWILL">
+
+        //1)JavaScript 접근
+        alert(document.getElementById("uid").value);
+
+        //2)jQuery 접근
+        //-> 기본문법 : $("선택자").action()
+        alert($("#uid").val());
+        //////////////////////////////////////////////////////////
+
+
+
+
+        
+
+
+    </script>
+
+</body>
+</html>
