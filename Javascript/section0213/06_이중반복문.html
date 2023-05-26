@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>06_이중반복문.html</title>
+  <style></style>
+</head>
+
+<body>
+
+  <h3>이중 반복문</h3>
+
+  <script>
+
+    for(let a=1; a<=2; a=a+1){
+        document.write("JAVA");
+
+        for(let b=1; b<=3; b=b+1){
+            document.write("PYTHON")
+        }        
+        document.write("<hr>");
+    }//for end
+    /*
+        a=1  1<=2  JAVA
+                    b=1  1<=3 PYTHON
+                         2<=3 PYTHON
+                         3<=3 PYTHON
+             2<=2  JAVA
+                    b=1  1<=3 PYTHON
+                         2<=3 PYTHON
+                         3<=3 PYTHON    
+    */
+    
+
+    //문제) 구구단 2~9단 출력
+    for(let dan=2; dan<=9; dan=dan+1){
+        document.write(dan+"단<br>");
+
+        for(let i=1; i<=9; i=i+1){
+            document.write(dan+"*"+i+"="+(dan*i));
+            document.write("<br>")
+        }
+        document.write("<hr>")
+
+    }//for end
+    ///////////////////////////////////////////////////////
+
+
+    //회전수 증가
+    let a=0, b=0;
+    for(a=1; a<=4; a=a+1){
+
+        for(b=1; b<=a; b=b+1){
+            document.write("#");
+        }
+
+        document.write("<br>");
+    }//for end
+    /*
+        a=1 1<=4
+                b=1 1<=1 #
+                    2<=1
+        a=2 2<=4
+                b=1 1<=2 #
+                    2<=2 #
+                    3<=2
+        a=3 3<=4
+                b=1 1<=3 #
+                    2<=3 #
+                    3<=3 #
+    */
+   /////////////////////////////////////////////////////
+   document.write("<hr>")
+
+
+
+
+    //회전수 감소
+    for(a=4; a>=1; a=a-1){
+
+        for(b=1; b<=a; b=b+1){
+            document.write("@");
+        }
+
+        document.write("<br>");
+    }//for end
+    /*
+        a=4 4>=1
+                b=1 1<=4 @
+                    2<=4 @
+                    3<=4 @
+                    4<=4 @
+        a=3 3>=1
+                b=1 1<=3 @
+                    2<=3 @
+                    3<=3 @
+        a=2 2>=1
+                b=1 1<=2 @
+                    2<=2 @
+        a=1 1>=1
+                b=1 1<=1 @
+                    2<=1
+        a=0 0>=1
+    */
+    document.write("<hr>")
+    document.write(a+b);
+    document.write("<hr>")
+
+
+    //문제) 2g, 3g, 5g짜리 추가 각각 5개씩 있을때,
+    //      세가지의 추의 조합으로 무게가 40~45사이일 때
+    //      각 추의 갯수와 무게를 출력하는 프로그램
+    /*
+            출력결과
+            2g   3g   5g      total
+            1    5    5       42
+            2    4    5       41
+            2    5    5       44    
+    */
+
+    document.write("2g  3g  5g  total<br>");
+    let total=0;
+    let count=0;
+    for(a=1; a<=5; a++){        //2g
+
+        for(b=1; b<=5; b++){    //3g
+
+            for(c=1; c<=5; c++){ //5g
+
+                total=(a*2)+(b*3)+(c*5);
+                if(total<=45 && total>=40){
+                document.write(a+" + "+b+" + "+c+" = "+total);
+                document.write("<br>");
+                count++;                
+                }
+            }
+            
+        }
+        
+    }
+    document.write("<hr>")
+    document.write("total 40~45g 사이의 갯수 : "+count);
+
+
+
+    // document.write("2g  3g  5g  total<br>");
+    // for(a=1; a<=5; a++){
+    //     for(b=1; b<=5; b++){
+    //         for(c=1; c<=5; c++)
+    //         if((a*2)+(b*3)+(c*5)<=45 && (a*2)+(b*3)+(c*5)>=40){
+    //             total=(a*2)+(b*3)+(c*5)
+    //             document.write(a+" + "+b+" + "+c+" = "+total);
+    //             document.write("<hr>")
+    //         }
+    //     }
+    // }
+
+
+
+
+  </script>
+
+</body>
+</html>

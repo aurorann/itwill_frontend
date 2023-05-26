@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>02_지폐갯수.html</title>
+  <style></style>
+</head>
+
+<body>
+
+    <div id="demo"></div>
+
+  <script>
+    //연습) 각 지폐갯수를 구해서 표작성해서 본문 id=demo에 출력하시오
+    /*
+               ┌────────────┐
+               │ 만원 │ 5장 │
+               ├────────────┤
+               | 천원 | 4장 |
+               ├────────────┤
+               | 백원 | 3장 |
+               ├────────────┤
+               | 십원 | 2장 |
+               └────────────┘
+                
+    */
+
+    let money = 54320;
+    let won1 = parseInt(money/10000);
+    money = money%10000  //4320  money%=10000
+
+    let won2 = parseInt(money/1000);
+    money = money%1000  //320    
+
+    let won3 = parseInt(money/100);
+    money = money%100  //20
+
+    let won4 = parseInt(money/10);
+
+
+
+
+    let result = ""; //결과값
+    result = result + "<table border='1'>";     //result += "<table border='1'"
+    result = result + "<tr>";
+    result = result + "     <th width = '50px'>만원</th>";
+    result = result + "     <td width='40px', align='center'>"+won1+"</td>";
+    result = result + "</tr>";
+    result = result + "<tr>";
+    result = result + "     <th>천원</th>";
+    result = result + "     <td width='40px', align='center'>"+won2+"</td>";
+    result = result + "</tr>";
+    result = result + "<tr>";
+    result = result + "     <th>백원</th>";
+    result = result + "     <td width='40px', align='center'>"+won3+"</td>";
+    result = result + "</tr>";
+    result = result + "<tr>";
+    result = result + "     <th>십원</th>";
+    result = result + "     <td width='40px', align='center'>"+won4+"</td>";
+    result = result + "</tr>";
+
+    document.getElementById("demo").innerHTML=result;
+    
+  </script>
+
+</body>
+</html>
